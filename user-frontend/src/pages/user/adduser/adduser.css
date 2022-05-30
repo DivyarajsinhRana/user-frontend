@@ -1,0 +1,15 @@
+.add-user-container{
+    width: 100%;
+    padding: 20px 0px;
+}
+.add-user-text{
+    width: 100%;
+    text-align: center;
+}
+.add-user-form
+{   
+    border: 2px solid black;
+    padding: 20px;
+    width: 50%;
+    margin:20px auto 0px auto;
+}

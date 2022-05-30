@@ -1,0 +1,20 @@
+.use-container {
+  width: 100%;
+}
+.user-detail {
+  width: 100%;
+  padding: 20px 0px;
+  text-align: center;
+}
+.user-card {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+.add-button{
+    text-align: center;
+    padding: 20px 0px;
+}
