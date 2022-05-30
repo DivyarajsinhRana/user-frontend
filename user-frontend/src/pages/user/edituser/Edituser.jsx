@@ -6,7 +6,7 @@ const EditUser = () => {
     const user = useLocation().state;
     const { name, password, profession, id } = user;
     const [Name, setName] = useState(name);
-    const [Id, setId] = useState(id);
+    // const [Id, setId] = useState(id);
     const [Password, setPassword] = useState(password);
     const [Profession, setProfession] = useState(profession);
     const [error, setError] = useState('');
@@ -15,15 +15,14 @@ const EditUser = () => {
         setName('');
         setPassword('');
         setProfession('');
-        setId('');
+        // setId('');
     }
-    const handleSubmit = (e, name, password, profession, Id) => {
+    const handleSubmit = (e, name, password, profession) => {
         e.preventDefault();
         let body = {
             name: name,
             password: password,
-            profession: profession,
-            id: Id
+            profession: profession
         }
         axios.put(`http://localhost:8000/users/${id}`, body).then(res => {
             if (res) {
@@ -41,7 +40,7 @@ const EditUser = () => {
                 error !== '' && <div>{error}</div>
             }
             <div className='edit-user-text'>Edit user</div>
-            <form className='edit-user-form' onSubmit={(e) => handleSubmit(e, Name, Password, Profession, Id)}>
+            <form className='edit-user-form' onSubmit={(e) => handleSubmit(e, Name, Password, Profession)}>
                 <div>
                     <label htmlFor="name">Name:</label>
                     <input type="text" value={Name} placeholder='name' onChange={(e) => setName(e.target.value)} required />
@@ -54,10 +53,10 @@ const EditUser = () => {
                     <label htmlFor="profession">Profession:</label>
                     <input type="text" value={Profession} placeholder='profession' onChange={(e) => setProfession(e.target.value)} required />
                 </div>
-                <div>
+                {/* <div>
                     <label htmlFor="id">ID:</label>
                     <input type="number" value={Id} placeholder='id' onChange={(e) => setId(e.target.value)} required />
-                </div>
+                </div> */}
                 <div className='button-container'>
                     <button type='submit'>Edit</button>
                     <button onClick={() => hanldeResetForm()} >Reset</button>
